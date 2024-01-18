@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('passengers');
-            $table->year('year');
+            $table->year('year'); // < 1901 must be type integer, not year
             $table->unsignedBigInteger('train_type_id');
             //It's a foreign key
             $table->foreign('train_type_id')->references('id')->on('train_types');
