@@ -8,6 +8,7 @@
 <body>
     <li><a href="{{ route('index') }}">Inicio</a></li>
     <h1>Tipos de trenes</h1>
+    <button><a href="{{ route('train_types.create') }}">Crear tipo de tren</a></button>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab at dignissimos tenetur iusto quos accusantium veritatis aliquid iste odit est, expedita mollitia necessitatibus alias ipsa aperiam quia repellat. Error harum rem inventore possimus. Asperiores in consequatur delectus porro qui aperiam nobis modi magni enim quaerat sequi, animi repellendus nostrum accusantium!</p>
 
     <table>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use App\Models\Train; //for train names
+use App\Models\TicketType; //for ticket types
 
 class TicketController extends Controller
 {
@@ -24,9 +26,12 @@ class TicketController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
     public function create()
     {
-        // return view('platos/create');
+        $trains = Train::all();
+        $ticket_types = TicketType::all();
+        return view('tickets/create', ['trains' => $trains], ['ticket_types' => $ticket_types]);
     }
 
     /**
@@ -34,13 +39,15 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        // $plato = new Plato;
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $ticket = new Ticket;
+        $ticket -> date = $request -> input('date');
+        $ticket -> price = $request -> input('price');
+        $ticket -> train_id = $request -> input('train_id');
+        $ticket -> ticket_type_id = $request -> input('ticket_type_id');
 
-        // return redirect('platos');
+        $ticket -> save();
+
+        return redirect('tickets');
     }
 
     /**

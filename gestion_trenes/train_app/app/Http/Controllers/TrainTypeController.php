@@ -26,7 +26,7 @@ class TrainTypeController extends Controller
      */
     public function create()
     {
-        // return view('platos/create');
+        return view('train_types/create');
     }
 
     /**
@@ -34,15 +34,14 @@ class TrainTypeController extends Controller
      */
     public function store(Request $request)
     {
-        // $plato = new Plato;
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $train_type = new TrainType;
+        $train_type -> type = $request -> input('name');
 
-        // return redirect('platos');
+        $train_type -> save();
+
+        return redirect('train_types');
     }
-
+    
     /**
      * Display the specified resource.
      */

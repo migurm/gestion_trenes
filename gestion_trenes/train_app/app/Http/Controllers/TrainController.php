@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Train;
+use App\Models\TrainType; //get the types for create a new train
 
 class TrainController extends Controller
 {
@@ -26,7 +27,8 @@ class TrainController extends Controller
      */
     public function create()
     {
-        // return view('platos/create');
+        $train_types = TrainType::all();
+        return view('trains/create', ['train_types' => $train_types]);
     }
 
     /**
@@ -34,13 +36,15 @@ class TrainController extends Controller
      */
     public function store(Request $request)
     {
-        // $plato = new Plato;
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $train = new Train;
+        $train -> name = $request -> input('name');
+        $train -> passengers = $request -> input('passengers');
+        $train -> year = $request -> input('year');
+        $train -> train_type_id = $request -> input('type');
 
-        // return redirect('platos');
+        $train -> save();
+
+        return redirect('trains');
     }
 
     /**

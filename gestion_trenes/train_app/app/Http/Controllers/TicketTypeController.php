@@ -26,7 +26,7 @@ class TicketTypeController extends Controller
      */
     public function create()
     {
-        // return view('platos/create');
+        return view('ticket_types/create');
     }
 
     /**
@@ -34,13 +34,12 @@ class TicketTypeController extends Controller
      */
     public function store(Request $request)
     {
-        // $plato = new Plato;
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $ticket_type = new TicketType;
+        $ticket_type -> type = $request -> input('type');
 
-        // return redirect('platos');
+        $ticket_type -> save();
+
+        return redirect('ticket_types');
     }
 
     /**
