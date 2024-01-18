@@ -48,9 +48,9 @@ class TicketController extends Controller
      */
     public function show(string $id)
     {
-        // $plato = Plato::find($id);
+        $ticket = Ticket::find($id);
 
-        // return view('platos/show', ['plato'=>$plato]);
+        return view('tickets/show', ['ticket'=>$ticket]);
     }
 
     /**

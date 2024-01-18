@@ -25,17 +25,17 @@
         <tbody>
             @foreach($trains as $train)
             <tr>
-            <td> {{ $train->name }} </td>
-            <td> {{ $train->passengers }} </td>
-            <td> {{ $train->year }} </td>
-            <td> {{ $train->train_type->type }} </td> <!-- unbelievable -->
-            <td>
-                <form method="GET" action="{{ route('trains.show', ['train' => $train->id]) }}">
-                    <input type="submit" value="ver">
-                </form>
-            </td>
-            <td>Modificar</td>
-            <td>Eliminar</td>
+                <td> {{ $train->name }} </td>
+                <td> {{ $train->passengers }} </td>
+                <td> {{ $train->year }} </td>
+                <td> {{ $train->train_type->type }} </td> <!-- unbelievable -->
+                <td>
+                    <form method="GET" action="{{ route('trains.show', ['train' => $train->id]) }}">
+                        <input type="submit" value="ver">
+                    </form>
+                </td>
+                <td>Modificar</td>
+                <td>Eliminar</td>
             </tr>
             @endforeach
         </tbody>

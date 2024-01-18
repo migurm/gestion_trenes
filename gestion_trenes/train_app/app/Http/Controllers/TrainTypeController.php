@@ -48,9 +48,9 @@ class TrainTypeController extends Controller
      */
     public function show(string $id)
     {
-        // $plato = Plato::find($id);
+        $train_type = TrainType::find($id);
 
-        // return view('platos/show', ['plato'=>$plato]);
+        return view('train_types/show', ['train_type'=>$train_type]);
     }
 
     /**

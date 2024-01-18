@@ -15,5 +15,27 @@
             <li> {{ $ticket_type->type }} </li>
         @endforeach
     </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de ticket</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($ticket_types as $ticket_type)
+            <tr>
+                <td> {{ $ticket_type->type }} </td>
+                <td>
+                    <form method="GET" action="{{ route('ticket_types.show', ['ticket_type' => $ticket_type->id]) }}">
+                        <input type="submit" value="ver">
+                    </form>                    
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>

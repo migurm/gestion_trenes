@@ -10,11 +10,26 @@
     <h1>Tipos de trenes</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab at dignissimos tenetur iusto quos accusantium veritatis aliquid iste odit est, expedita mollitia necessitatibus alias ipsa aperiam quia repellat. Error harum rem inventore possimus. Asperiores in consequatur delectus porro qui aperiam nobis modi magni enim quaerat sequi, animi repellendus nostrum accusantium!</p>
 
-    <ul>
-        @foreach($train_types as $train_type)
-            <li> {{ $train_type->type }} </li>
-        @endforeach
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de tren</th>
+            </tr>            
+        </thead>
+        <tbody>
+            @foreach($train_types as $train_type)
+            <tr>
+                <td> {{ $train_type->type }} </td>
+                <td>
+                    <form method="GET" action="{{ route('train_types.show', ['train_type' => $train_type->id]) }}">
+                        <input type="submit" value="ver">
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
 
-    </ul>
+        
+    </table>
 </body>
 </html>

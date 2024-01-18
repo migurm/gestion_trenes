@@ -48,9 +48,9 @@ class TicketTypeController extends Controller
      */
     public function show(string $id)
     {
-        // $plato = Plato::find($id);
+        $ticket_type = TicketType::find($id);
 
-        // return view('platos/show', ['plato'=>$plato]);
+        return view('ticket_types/show', ['ticket_type'=>$ticket_type]);
     }
 
     /**
