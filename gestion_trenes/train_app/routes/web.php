@@ -20,7 +20,7 @@ use App\Http\Controllers\TrainTypeController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::resource('/train_types', TrainTypeController::class);
 Route::resource('/trains', TrainController::class);

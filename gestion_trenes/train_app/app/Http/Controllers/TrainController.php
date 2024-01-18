@@ -48,9 +48,9 @@ class TrainController extends Controller
      */
     public function show(string $id)
     {
-        // $plato = Plato::find($id);
+        $train = Train::find($id);
 
-        // return view('platos/show', ['plato'=>$plato]);
+        return view('trains/show', ['train'=>$train]);
     }
 
     /**
