@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TicketTypeController;
+use App\Http\Controllers\TrainController;
+use App\Http\Controllers\TrainTypeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::resource('/train_types', TrainTypeController::class);
+Route::resource('/trains', TrainController::class);
+Route::resource('/tickets', TicketController::class);
+Route::resource('/ticket_types', TicketTypeController::class);
