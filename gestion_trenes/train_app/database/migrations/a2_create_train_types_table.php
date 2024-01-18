@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('train_types', function (Blueprint $table) {
             $table->id();
-            $table->type();
+            $table->string('type');
             $table->timestamps();
         });
     }
