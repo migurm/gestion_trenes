@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Train;
 use App\Models\TrainType; //get the types for create a new train
+use DB;
 
 class TrainController extends Controller
 {
@@ -90,8 +91,9 @@ class TrainController extends Controller
      */
     public function destroy(string $id)
     {
-        // $bebida = Plato::find($id);
+        DB::table('trains')->where('id', "=", $id)->delete();
+        
+        return redirect('trains');
 
-        // $bebida -> delete;
     }
 }

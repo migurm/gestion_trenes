@@ -39,6 +39,13 @@
                         <input type="submit" value="editar">
                     </form>
                 </td>
+                <td>
+                    <form method="POST" action="{{ route('tickets.destroy', ['ticket' => $ticket->id]) }}">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <input type="submit" value="eliminar">
+                    </form> 
+                </td>
             </tr>
             @endforeach
         </tbody>

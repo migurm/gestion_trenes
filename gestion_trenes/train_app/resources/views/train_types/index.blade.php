@@ -34,6 +34,13 @@
                         <input type="submit" value="editar">
                     </form>
                 </td>
+                <td>
+                    <form method="POST" action="{{ route('train_types.destroy', ['train_type' => $train_type->id]) }}">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <input type="submit" value="eliminar">
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

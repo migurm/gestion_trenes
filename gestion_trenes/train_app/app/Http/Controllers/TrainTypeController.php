@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TrainType;
+use DB;
 
 class TrainTypeController extends Controller
 {
@@ -81,8 +82,9 @@ class TrainTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        // $bebida = Plato::find($id);
+        DB::table('train_types')->where('id', "=", $id)->delete();
+        
+        return redirect('train_types');
 
-        // $bebida -> delete;
     }
 }

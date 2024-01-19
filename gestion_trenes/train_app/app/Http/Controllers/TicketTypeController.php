@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TicketType;
+use DB;
 
 class TicketTypeController extends Controller
 {
@@ -81,8 +82,9 @@ class TicketTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        // $bebida = Plato::find($id);
+        DB::table('ticket_types')->where('id', "=", $id)->delete();
+        
+        return redirect('ticket_types');
 
-        // $bebida -> delete;
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\Train; //for train names
 use App\Models\TicketType; //for ticket types
+use DB;
 
 class TicketController extends Controller
 {
@@ -98,8 +99,9 @@ class TicketController extends Controller
      */
     public function destroy(string $id)
     {
-        // $bebida = Plato::find($id);
+        DB::table('tickets')->where('id', "=", $id)->delete();
+        
+        return redirect('tickets');
 
-        // $bebida -> delete;
     }
 }
