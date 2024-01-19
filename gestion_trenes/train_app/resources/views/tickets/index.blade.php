@@ -17,6 +17,9 @@
                 <th>Precio</th>
                 <th>Tren</th>
                 <th>Ticket</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +32,11 @@
                 <td>
                     <form method="GET" action="{{ route('tickets.show', ['ticket' => $ticket->id]) }}">
                         <input type="submit" value="ver">
+                    </form>
+                </td>
+                <td>
+                    <form method="GET" action="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">
+                        <input type="submit" value="editar">
                     </form>
                 </td>
             </tr>

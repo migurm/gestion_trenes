@@ -35,7 +35,11 @@
                         <input type="submit" value="ver">
                     </form>
                 </td>
-                <td>Modificar</td>
+                <td>
+                    <form method="GET" action="{{ route('trains.edit', ['train' => $train->id]) }}">
+                        <input type="submit" value="editar">
+                    </form>
+                </td>
                 <td>Eliminar</td>
             </tr>
             @endforeach

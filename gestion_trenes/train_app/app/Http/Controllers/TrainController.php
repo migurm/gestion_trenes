@@ -62,9 +62,10 @@ class TrainController extends Controller
      */
     public function edit(string $id)
     {
-        // $plato = Plato::find($id);
+        $train = Train::find($id);
+        $train_types = TrainType::all();
 
-        // return view('platos/edit', ['plato'=>$plato]);
+        return view('trains/edit', ['train'=>$train], ['train_types'=>$train_types]);
     }
 
     /**
@@ -72,14 +73,16 @@ class TrainController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $plato = Plato::find($id);
+        $train = Train::find($id);
         
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $train -> name = $request -> input('name');
+        $train -> passengers = $request -> input('passengers');
+        $train -> year = $request -> input('year');
+        $train -> train_type_id = $request -> input('train_type_id');
 
-        // return redirect('platos');
+        $train -> save();
+
+        return redirect('trains');
     }
 
     /**

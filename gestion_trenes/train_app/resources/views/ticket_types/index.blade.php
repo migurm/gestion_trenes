@@ -34,6 +34,11 @@
                         <input type="submit" value="ver">
                     </form>                    
                 </td>
+                <td>
+                    <form method="GET" action="{{ route('ticket_types.edit', ['ticket_type' => $ticket_type->id]) }}">
+                        <input type="submit" value="editar">
+                    </form>                    
+                </td>
             </tr>
             @endforeach
         </tbody>

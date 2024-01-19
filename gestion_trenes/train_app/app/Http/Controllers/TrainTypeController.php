@@ -41,7 +41,7 @@ class TrainTypeController extends Controller
 
         return redirect('train_types');
     }
-    
+
     /**
      * Display the specified resource.
      */
@@ -57,9 +57,9 @@ class TrainTypeController extends Controller
      */
     public function edit(string $id)
     {
-        // $plato = Plato::find($id);
+        $train_type = TrainType::find($id);
 
-        // return view('platos/edit', ['plato'=>$plato]);
+        return view('train_types/edit', ['train_type'=>$train_type]);
     }
 
     /**
@@ -67,14 +67,13 @@ class TrainTypeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $plato = Plato::find($id);
+        $train_type = TrainType::find($id);
         
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $train_type -> type = $request -> input('type');
 
-        // return redirect('platos');
+        $train_type -> save();
+
+        return redirect('train_types');
     }
 
     /**

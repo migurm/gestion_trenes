@@ -16,10 +16,10 @@ return new class extends Migration
             $table->date('date');
             $table->float('price');
 
-            $table->unsignedBigInteger('train_id');
+            $table->unsignedBigInteger('train_id')->default(0); //If trains->id is deleted
             $table->foreign('train_id')->references('id')->on('trains');
 
-            $table->unsignedBigInteger('ticket_type_id');
+            $table->unsignedBigInteger('ticket_type_id')->default(0); //If ticket_types->id is deleted
             $table->foreign('ticket_type_id')->references('id')->on('ticket_types');
 
             $table->timestamps();

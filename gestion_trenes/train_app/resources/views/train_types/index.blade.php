@@ -15,6 +15,9 @@
         <thead>
             <tr>
                 <th>Tipo de tren</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>            
         </thead>
         <tbody>
@@ -24,6 +27,11 @@
                 <td>
                     <form method="GET" action="{{ route('train_types.show', ['train_type' => $train_type->id]) }}">
                         <input type="submit" value="ver">
+                    </form>
+                </td>
+                <td>
+                    <form method="GET" action="{{ route('train_types.edit', ['train_type' => $train_type->id]) }}">
+                        <input type="submit" value="editar">
                     </form>
                 </td>
             </tr>

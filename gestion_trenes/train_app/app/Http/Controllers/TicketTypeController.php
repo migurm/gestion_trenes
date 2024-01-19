@@ -57,9 +57,9 @@ class TicketTypeController extends Controller
      */
     public function edit(string $id)
     {
-        // $plato = Plato::find($id);
+        $ticket_type = TicketType::find($id);
 
-        // return view('platos/edit', ['plato'=>$plato]);
+        return view('ticket_types/edit', ['ticket_type'=>$ticket_type]);
     }
 
     /**
@@ -67,14 +67,13 @@ class TicketTypeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $plato = Plato::find($id);
+        $ticket_type = TicketType::find($id);
         
-        // $plato -> nombre = $request -> input('nombre');
-        // $plato -> precio = $request -> input('precio');
-        // $plato -> tipo_id = $request -> input('tipo_id');
-        // $plato -> save();
+        $ticket_type -> type = $request -> input('type');
 
-        // return redirect('platos');
+        $ticket_type -> save();
+
+        return redirect('ticket_types');
     }
 
     /**
